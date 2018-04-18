@@ -8,6 +8,14 @@ Gold (gp)	    1/100	  1/10	1/2	  1	    10
 Platinum (pp)	1/1,000	1/100	1/20	1/10	1
 */
 
+export const MONEY_VALUE = {
+  copper:1,
+  silver:10,
+  electrum:50,
+  gold:100,
+  platinum:1000
+};
+
 export interface IMoney {
   copper?: number;
   silver?: number;
