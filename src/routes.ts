@@ -1,3 +1,4 @@
+import { IndividualController } from './controllers/individual.controller';
 import { RollController } from "./controllers/roll.controller";
 import * as express from "express";
 
@@ -12,19 +13,31 @@ app.get("/", (req: express.Request, res: express.Response) => {
 app.get(
   "/individual/:challenge",
   (req: express.Request, res: express.Response) => {
+    const challenge = req.params["challenge"];
     res.status(200).json({
-      message: req.params["challenge"]
+      data: IndividualController.Roll(challenge)
     });
   }
 );
 
 app.get(
-  "/roll/:diceType/:dice",
+  "/individual/:challenge/:dieRolled",
+  (req: express.Request, res: express.Response) => {
+    const challenge = req.params["challenge"];
+    const dieRolled = req.params["dieRolled"];
+    res.status(200).json({
+      data: IndividualController.Roll(challenge, dieRolled)
+    });
+  }
+);
+
+app.get(
+  "/roll/:dieType/:dice",
   (req: express.Request, res: express.Response) => {
     const dice = req.params["dice"];
-    const diceType = req.params["diceType"];
+    const dieType = req.params["dieType"];
 
-    const results = RollController.Roll(diceType, dice);
+    const results = RollController.Roll(dieType, dice);
 
     res.status(200).json({
       data: results
