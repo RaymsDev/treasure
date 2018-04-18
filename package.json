@@ -1,0 +1,32 @@
+{
+  "name": "treasure",
+  "version": "1.0.0",
+  "description": "Get Facebook's event",
+  "main": "src/server.ts",
+  "dependencies": {
+    "express": "^4.16.2"
+  },
+  "devDependencies": {
+    "@types/express": "^4.11.0",
+    "@types/node": "^9.3.0",
+    "nodemon": "^1.14.11",
+    "typescript": "^2.6.2"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "nodemon ./dist/server.js",
+    "build": "tsc",
+    "dev": "tsc --watch | nodemon --inspect ./dist/server.js --watch dist",
+    "dockerise": "docker-compose up"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/RaymsDev/event-finder.git"
+  },
+  "author": "rayms.dev@gmail.com",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/RaymsDev/event-finder/issues"
+  },
+  "homepage": "https://github.com/RaymsDev/event-finder#readme"
+}
