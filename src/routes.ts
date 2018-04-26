@@ -6,7 +6,8 @@ const app = express();
 
 app.get("/", (req: express.Request, res: express.Response) => {
   res.status(200).json({
-    message: "It's work!"
+    roll_die:"/roll/diceType",
+    roll_dice:"/roll/diceType/diceNumber"
   });
 });
 
