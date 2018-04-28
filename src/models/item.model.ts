@@ -2,7 +2,7 @@ import { IDescription } from './description.model';
 import { IMoney } from './cost.model';
 import { IDiceResult } from './dice-result.model';
 
-export interface IGem{
+export interface IItem{
     diceResult : IDiceResult;
     cost: IMoney;
     description:IDescription;

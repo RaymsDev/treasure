@@ -1,6 +1,6 @@
-import { IGem } from "../models/gem.model";
+import { IItem } from "../models/item.model";
 
-const VERY_SMALL_GEMS: Array<IGem> = [
+const VERY_SMALL_GEMS: Array<IItem> = [
   {
     diceResult: {
       dieType: 12,
@@ -150,7 +150,7 @@ const VERY_SMALL_GEMS: Array<IGem> = [
   }
 ];
 
-const SMALL_GEMS: Array<IGem> = [
+const SMALL_GEMS: Array<IItem> = [
   {
     diceResult: {
       dieType: 12,
@@ -299,7 +299,7 @@ const SMALL_GEMS: Array<IGem> = [
   }
 ];
 
-const MEDIUM_GEMS: Array<IGem> = [
+const MEDIUM_GEMS: Array<IItem> = [
   {
     diceResult: {
       dieType: 10,
@@ -422,7 +422,7 @@ const MEDIUM_GEMS: Array<IGem> = [
   }
 ];
 
-const BIG_GEMS: Array<IGem> = [
+const BIG_GEMS: Array<IItem> = [
   {
     diceResult: {
       dieType: 6,
@@ -497,7 +497,7 @@ const BIG_GEMS: Array<IGem> = [
   }
 ];
 
-const VERY_BIG_GEMS: Array<IGem> = [
+const VERY_BIG_GEMS: Array<IItem> = [
     {
       diceResult: {
         dieType: 8,
@@ -596,7 +596,7 @@ const VERY_BIG_GEMS: Array<IGem> = [
     }
   ];
 
-  const LEGENDARY_GEMS: Array<IGem> = [
+  const LEGENDARY_GEMS: Array<IItem> = [
     {
       diceResult: {
         dieType: 4,
@@ -647,7 +647,7 @@ const VERY_BIG_GEMS: Array<IGem> = [
     }
   ];
 
-const GEMS:Array<IGem> = [
+const GEMS:Array<IItem> = [
     ...VERY_SMALL_GEMS,
     ...SMALL_GEMS,
     ...MEDIUM_GEMS,
