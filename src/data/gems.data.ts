@@ -1,4 +1,5 @@
 import { IItem } from "../models/item.model";
+import { IRarityTable } from "../models/rarity-table.model";
 
 const VERY_SMALL_GEMS: Array<IItem> = [
   {
@@ -498,160 +499,164 @@ const BIG_GEMS: Array<IItem> = [
 ];
 
 const VERY_BIG_GEMS: Array<IItem> = [
-    {
-      diceResult: {
-        dieType: 8,
-        less: 1
-      },
-      cost: {
-        gold: 1000
-      },
-      description: {
-        FR: "Opale noire (vert foncé translucide moucheté de noir et d'or)"
-      }
+  {
+    diceResult: {
+      dieType: 8,
+      less: 1
     },
-    {
-      diceResult: {
-        dieType: 8,
-        less: 2
-      },
-      cost: {
-        gold: 1000
-      },
-      description: {
-        FR: "Saphir bleu (blanc-bleu à bleu, transparent)"
-      }
+    cost: {
+      gold: 1000
     },
-    {
-      diceResult: {
-        dieType: 8,
-        less: 3
-      },
-      cost: {
-        gold: 1000
-      },
-      description: {
-        FR: "Émeraude (vert foncé vif et transparent)"
-      }
-    },
-    {
-      diceResult: {
-        dieType: 8,
-        less: 4
-      },
-      cost: {
-        gold: 1000
-      },
-      description: {
-        FR: "Opale de feu (rouge ardent translucide)"
-      }
-    },
-    {
-      diceResult: {
-        dieType: 8,
-        less: 5
-      },
-      cost: {
-        gold: 1000
-      },
-      description: {
-        FR: "Opale (bleu pâle translucide moucheté de vert et d'or)"
-      }
-    },
-    {
-      diceResult: {
-        dieType: 8,
-        less: 6
-      },
-      cost: {
-        gold: 1000
-      },
-      description: {
-        FR: "Rubis étoilé (vermeil translucide avec un coeur en forme d'étoile blanche)"
-      }
-    },
-    {
-      diceResult: {
-        dieType: 8,
-        less: 7
-      },
-      cost: {
-        gold: 1000
-      },
-      description: {
-        FR: "Saphir étoilé (bleu saphir translucide avec un coeur en forme d'étoile blanche)"
-      }
-    },
-    {
-      diceResult: {
-        dieType: 8,
-        less: 8
-      },
-      cost: {
-        gold: 1000
-      },
-      description: {
-        FR: "Saphir jaune (jaune flamboyant ou vert-jaune, transparent)"
-      }
+    description: {
+      FR: "Opale noire (vert foncé translucide moucheté de noir et d'or)"
     }
-  ];
-
-  const LEGENDARY_GEMS: Array<IItem> = [
-    {
-      diceResult: {
-        dieType: 4,
-        less: 1
-      },
-      cost: {
-        gold: 5000
-      },
-      description: {
-        FR: "Saphir noir (noir brillant translucide avec des reflets chatoyants)"
-      }
+  },
+  {
+    diceResult: {
+      dieType: 8,
+      less: 2
     },
-    {
-      diceResult: {
-        dieType: 4,
-        less: 2
-      },
-      cost: {
-        gold: 5000
-      },
-      description: {
-        FR: "Diamant (blanc bleuté, jaune canari, rose, marron ou bleu, transparent)"
-      }
+    cost: {
+      gold: 1000
     },
-    {
-      diceResult: {
-        dieType: 4,
-        less: 3
-      },
-      cost: {
-        gold: 5000
-      },
-      description: {
-        FR: "jacinthe (orange flamboyant transparent)"
-      }
-    },
-    {
-      diceResult: {
-        dieType: 4,
-        less: 4
-      },
-      cost: {
-        gold: 5000
-      },
-      description: {
-        FR: "Rubis (rouge clair ou pourpre foncé, transparent)"
-      }
+    description: {
+      FR: "Saphir bleu (blanc-bleu à bleu, transparent)"
     }
-  ];
-
-const GEMS:Array<IItem> = [
-    ...VERY_SMALL_GEMS,
-    ...SMALL_GEMS,
-    ...MEDIUM_GEMS,
-    ...BIG_GEMS,
-    ...VERY_BIG_GEMS,
-    ...LEGENDARY_GEMS
+  },
+  {
+    diceResult: {
+      dieType: 8,
+      less: 3
+    },
+    cost: {
+      gold: 1000
+    },
+    description: {
+      FR: "Émeraude (vert foncé vif et transparent)"
+    }
+  },
+  {
+    diceResult: {
+      dieType: 8,
+      less: 4
+    },
+    cost: {
+      gold: 1000
+    },
+    description: {
+      FR: "Opale de feu (rouge ardent translucide)"
+    }
+  },
+  {
+    diceResult: {
+      dieType: 8,
+      less: 5
+    },
+    cost: {
+      gold: 1000
+    },
+    description: {
+      FR: "Opale (bleu pâle translucide moucheté de vert et d'or)"
+    }
+  },
+  {
+    diceResult: {
+      dieType: 8,
+      less: 6
+    },
+    cost: {
+      gold: 1000
+    },
+    description: {
+      FR:
+        "Rubis étoilé (vermeil translucide avec un coeur en forme d'étoile blanche)"
+    }
+  },
+  {
+    diceResult: {
+      dieType: 8,
+      less: 7
+    },
+    cost: {
+      gold: 1000
+    },
+    description: {
+      FR:
+        "Saphir étoilé (bleu saphir translucide avec un coeur en forme d'étoile blanche)"
+    }
+  },
+  {
+    diceResult: {
+      dieType: 8,
+      less: 8
+    },
+    cost: {
+      gold: 1000
+    },
+    description: {
+      FR: "Saphir jaune (jaune flamboyant ou vert-jaune, transparent)"
+    }
+  }
 ];
+
+const LEGENDARY_GEMS: Array<IItem> = [
+  {
+    diceResult: {
+      dieType: 4,
+      less: 1
+    },
+    cost: {
+      gold: 5000
+    },
+    description: {
+      FR: "Saphir noir (noir brillant translucide avec des reflets chatoyants)"
+    }
+  },
+  {
+    diceResult: {
+      dieType: 4,
+      less: 2
+    },
+    cost: {
+      gold: 5000
+    },
+    description: {
+      FR:
+        "Diamant (blanc bleuté, jaune canari, rose, marron ou bleu, transparent)"
+    }
+  },
+  {
+    diceResult: {
+      dieType: 4,
+      less: 3
+    },
+    cost: {
+      gold: 5000
+    },
+    description: {
+      FR: "jacinthe (orange flamboyant transparent)"
+    }
+  },
+  {
+    diceResult: {
+      dieType: 4,
+      less: 4
+    },
+    cost: {
+      gold: 5000
+    },
+    description: {
+      FR: "Rubis (rouge clair ou pourpre foncé, transparent)"
+    }
+  }
+];
+
+export const GEMS : IRarityTable = {
+  "A": VERY_SMALL_GEMS,
+  "B": SMALL_GEMS,
+  "C": MEDIUM_GEMS,
+  "E": BIG_GEMS,
+  "F": VERY_BIG_GEMS,
+  "G": LEGENDARY_GEMS
+};
+

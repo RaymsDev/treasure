@@ -1,3 +1,4 @@
+import { IRarityTable } from './../models/rarity-table.model';
 import { IItem } from './../models/item.model';
 
 
@@ -592,10 +593,10 @@ const VERY_BIG_PIECE_OF_ARTS : Array<IItem> = [
   }
 ];
 
-const PIECE_OF_ARTS: Array<IItem> = [
-  ...VERY_SMALL_PIECE_OF_ARTS,
-  ...SMALL_PIECE_OF_ARTS,
-  ...MEDIUM_PIECE_OF_ARTS,
-  ...BIG_PIECE_OF_ARTS,
-  ...VERY_BIG_PIECE_OF_ARTS
-];
+export const PIECE_OF_ARTS: IRarityTable = {
+  "A":VERY_SMALL_PIECE_OF_ARTS,
+  "B":SMALL_PIECE_OF_ARTS,
+  "C":MEDIUM_PIECE_OF_ARTS,
+  "D":BIG_PIECE_OF_ARTS,
+  "E":VERY_BIG_PIECE_OF_ARTS
+};
