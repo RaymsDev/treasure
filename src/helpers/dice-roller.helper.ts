@@ -5,17 +5,14 @@ class DiceRoller {
     return Math.floor(Math.random() * (max - min + 1)) + min; //The maximum is inclusive and the minimum is inclusive 
   }
 
-  public Roll(dieType: number, dice?: number): Array<number> {
+  public Roll(dieType: number, dice: number =1): Array<number> {
     let results = new Array<number>();
-
-    if (!dice) {
-      results.push(this.getRandomIntInclusive(1, dieType));
-      return results;
-    }
 
     for (let index = 0; index < dice; index++) {
       results.push(this.getRandomIntInclusive(1, dieType));
     }
+
+    this.rollog(dieType,dice,results);
 
     return results;
   }
@@ -46,6 +43,10 @@ class DiceRoller {
 
   public RollDie100(dice?: number): Array<number> {
     return this.Roll(100, dice);
+  }
+
+  private rollog(dieType:number, dice:number=1, results:Array<number>){
+    console.log(`Rolling ${dice}d${dieType}... ${results.toString()}`);
   }
 }
 

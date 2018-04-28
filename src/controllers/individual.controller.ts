@@ -18,37 +18,43 @@ export class IndividualController{
     INDIVDUAL_TREASURE.map((individual:IIndividual)=>{
       if(betweenHelper.IsBetween(challenge, individual.challenge.less, individual.challenge.high)){
         if(betweenHelper.IsBetween(diceRoll, individual.diceResult.less, individual.diceResult.high)){
-          
-          if(individual.money.copper){
-            const copper = individual.money.copper;
-            result.copper = this.calculateMoney(copper);
-          }
-
-          if(individual.money.silver){
-            const silver = individual.money.silver;
-            result.silver = this.calculateMoney(silver);
-          }
-
-          if(individual.money.electrum){
-            const electrum = individual.money.electrum;
-            result.electrum = this.calculateMoney(electrum);
-          }
-
-          if(individual.money.gold){
-            const gold = individual.money.gold;
-            result.gold = this.calculateMoney(gold);
-          }
-
-          if(individual.money.platinum){
-            const platinum = individual.money.platinum;
-            result.platinum = this.calculateMoney(platinum);
-          }
+          result = IndividualController.GetMoney(individual.money);
         }
       };
     });
 
     return result;
 
+  }
+
+  public static GetMoney(moneyRoll:IMoneyRoll):IMoney{
+    let result :IMoney = {};
+    if(moneyRoll.copper){
+      const copper = moneyRoll.copper;
+      result.copper = this.calculateMoney(copper);
+    }
+
+    if(moneyRoll.silver){
+      const silver = moneyRoll.silver;
+      result.silver = this.calculateMoney(silver);
+    }
+
+    if(moneyRoll.electrum){
+      const electrum = moneyRoll.electrum;
+      result.electrum = this.calculateMoney(electrum);
+    }
+
+    if(moneyRoll.gold){
+      const gold = moneyRoll.gold;
+      result.gold = this.calculateMoney(gold);
+    }
+
+    if(moneyRoll.platinum){
+      const platinum = moneyRoll.platinum;
+      result.platinum = this.calculateMoney(platinum);
+    }
+
+    return result;
   }
 
   private static calculateMoney(moneyRoll:IRoll){

@@ -4,6 +4,7 @@ import { IndividualController } from './controllers/individual.controller';
 import { RollController } from "./controllers/roll.controller";
 import * as express from "express";
 import { PIECE_OF_ARTS } from './data/piece-of-art.data';
+import { MultipleTrasureController } from './controllers/multiple-treasure.controller';
 
 const app = express();
 
@@ -18,7 +19,9 @@ app.get("/", (req: express.Request, res: express.Response) => {
     roll_piece_of_arts:"/pieceOfArt/:rarity[A-G]/:pieceOfArtNumber",
     rolled_piece_of_art:"/rolled/pieceOfArt/:rarity[A-G]/:dieRolled",
     individual_loot:"/individual/:challenge",
-    rolled_individual_loot:"/individual/:challenge/:dieRolled"
+    rolled_individual_loot:"/individual/:challenge/:dieRolled",
+    multiple_loot:"/multipleLoot/:challenge",
+    rolled_multiple_loot:"/multipleLoot/:challenge/:dieRolled"
   });
 });
 
@@ -39,6 +42,27 @@ app.get(
     const dieRolled = req.params["dieRolled"];
     res.status(200).json({
       data: IndividualController.Roll(challenge, dieRolled)
+    });
+  }
+);
+
+app.get(
+  "/multipleLoot/:challenge",
+  (req: express.Request, res: express.Response) => {
+    const challenge = req.params["challenge"];
+    res.status(200).json({
+      data: MultipleTrasureController.Roll(challenge)
+    });
+  }
+);
+
+app.get(
+  "/multipleLoot/:challenge/:dieRolled",
+  (req: express.Request, res: express.Response) => {
+    const challenge = req.params["challenge"];
+    const dieRolled = req.params["dieRolled"];
+    res.status(200).json({
+      data: MultipleTrasureController.Roll(challenge, dieRolled)
     });
   }
 );

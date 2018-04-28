@@ -1,3 +1,4 @@
+import { IRarityTable } from './../models/rarity-table.model';
 import { IItem } from "./../models/item.model";
 
 const WONDERFUL_FIGURINES: Array<IItem> = [
@@ -2352,3 +2353,12 @@ const MAGIC_OBJECTS_G: Array<IItem> = [
   }
 ];
 
+export const MAGIC_OBJECTS: IRarityTable = {
+  "A":MAGIC_OBJECTS_A,
+  "B":MAGIC_OBJECTS_B,
+  "C":MAGIC_OBJECTS_C,
+  "D":MAGIC_OBJECTS_D,
+  "E":MAGIC_OBJECTS_E,
+  "F":MAGIC_OBJECTS_F,
+  "G":MAGIC_OBJECTS_G
+};

@@ -298,7 +298,8 @@ const HARD_INDIVIDUAL: Array<IIndividual> = [
 const VERY_HARD_INDIVIDUAL: Array<IIndividual> = [
   {
     challenge: {
-      less: 17
+      less: 17,
+      high: 18
     },
     diceResult: {
       dieType: 100,
@@ -320,7 +321,8 @@ const VERY_HARD_INDIVIDUAL: Array<IIndividual> = [
   },
   {
     challenge: {
-      less: 17
+      less: 17,
+      high: 18
     },
     diceResult: {
       dieType: 100,
@@ -337,7 +339,8 @@ const VERY_HARD_INDIVIDUAL: Array<IIndividual> = [
   },
   {
     challenge: {
-      less: 17
+      less: 17,
+      high: 18
     },
     diceResult: {
       dieType: 100,
