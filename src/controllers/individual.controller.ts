@@ -12,7 +12,7 @@ const DICE_TYPE = 100;
 export class IndividualController{
   public static Roll(challenge:number, diceRolled?:number): Promise<IMoney>{
 
-    const resolve = ()=>{
+    const promise = new Promise<IMoney>((resolve, reject)=>{
       const diceRoll = diceRolled || diceRoller.RollDie100()[0];
       let result :IMoney = {};
   
@@ -24,10 +24,10 @@ export class IndividualController{
         };
       });
   
-      return result;
-    };
+     resolve(result);
+    });
 
-    return new Promise<IMoney>(resolve);
+    return promise;
 
   }
 

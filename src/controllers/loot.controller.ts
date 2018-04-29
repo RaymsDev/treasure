@@ -9,7 +9,7 @@ export class LootController {
     rarity: string,
     lootNumber: number = 1
   ): Promise<Array<IItem>> {
-    const resolve = () => {
+    const promise = new Promise<Array<IItem>>((resolve,reject) => {
       let results = new Array<IItem>();
       const loots = lootTable[rarity];
       const dieType = loots[0].diceResult.dieType;
@@ -30,19 +30,20 @@ export class LootController {
         });
       });
 
-      return results;
-    };
+      resolve(results);
+    });
 
-    return new Promise<Array<IItem>>(resolve);
+
+    return promise;
   }
 
   public static Rolled(
     lootTable: IRarityTable,
     rariry: string,
     dieRolled: number
-  ): Promise<Array<IItem>> {
-    const resolve = () => {
-      let result = null;
+  ): Promise<IItem> {
+    const promise = new Promise<IItem>((resolve,reject) => {
+
       const loots = lootTable[rariry];
 
       for (let index = 0; index < loots.length; index++) {
@@ -54,14 +55,14 @@ export class LootController {
             loot.diceResult.high
           )
         ) {
-          result = loot;
+          resolve(loot);
           break;
         }
       }
 
-      return result;
-    };
+     
+    });
 
-    return new Promise<Array<IItem>>(resolve);
+    return promise;
   }
 }

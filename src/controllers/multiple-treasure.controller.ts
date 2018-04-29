@@ -18,14 +18,14 @@ export class MultipleTrasureController {
     challenge: number,
     dieRolled?: number
   ): Promise<IMultipleTreasureResult> {
-
-    const resolve = () => {
-      if(!dieRolled){
+    const promise = new Promise<IMultipleTreasureResult>((resolve, reject) => {
+      if (!dieRolled) {
         dieRolled = diceRoller.RollDie100()[0];
       }
-      return this.rollTreasures(challenge, dieRolled);
-    };
-    return new Promise<IMultipleTreasureResult>(resolve); 
+      resolve(this.rollTreasures(challenge, dieRolled));
+    });
+
+    return promise;
   }
 
   private static rollTreasures(

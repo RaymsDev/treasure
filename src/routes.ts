@@ -38,7 +38,7 @@ app.get(
     })
     .catch(error=>{
       console.error(error);
-      res.status(500);
+      res.sendStatus(500);
     });
   }
 );
@@ -57,7 +57,7 @@ app.get(
     })
     .catch(error=>{
       console.error(error);
-      res.status(500);
+      res.sendStatus(500);
     });
 
 
@@ -77,7 +77,7 @@ app.get(
     })
     .catch(error=>{
       console.log(error);
-      res.status(500);
+      res.sendStatus(500);
     });
   }
 );
@@ -97,7 +97,7 @@ app.get(
     })
     .catch(error=>{
       console.log(error);
-      res.status(500);
+      res.sendStatus(500);
     });
   }
 );
@@ -115,7 +115,7 @@ app.get(
     })
     .catch(error=>{
       console.log(error);
-      res.status(500);
+      res.sendStatus(500);
     });
   
   }
@@ -132,7 +132,7 @@ app.get("/roll/:diceType", (req: express.Request, res: express.Response) => {
   })
   .catch(error=>{
     console.log(error);
-    res.status(500);
+    res.sendStatus(500);
   });
 
   
@@ -150,7 +150,7 @@ app.get("/gem/:rarity", (req: express.Request, res: express.Response) => {
     })
     .catch(error => {
       console.error(error);
-      res.status(500);
+      res.sendStatus(500);
     });
 });
 
@@ -168,7 +168,7 @@ app.get(
       })
       .catch(error => {
         console.error(error);
-        res.status(500);
+        res.sendStatus(500);
       });
   }
 );
@@ -187,7 +187,7 @@ app.get(
       })
       .catch(error => {
         console.log(error);
-        res.status(500);
+        res.sendStatus(500);
       });
   }
 );
@@ -206,7 +206,7 @@ app.get(
       })
       .catch(error => {
         console.error(error);
-        res.status(500);
+        res.sendStatus(500);
       });
   }
 );
@@ -225,7 +225,7 @@ app.get(
       })
       .catch(error => {
         console.error(error);
-        res.status(500);
+        res.sendStatus(500);
       });
   }
 );
@@ -244,7 +244,7 @@ app.get(
       })
       .catch(error => {
         console.log(error);
-        res.status(500);
+        res.sendStatus(500);
       });
   }
 );
