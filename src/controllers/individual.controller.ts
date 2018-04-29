@@ -10,20 +10,24 @@ import diceRoller from '../helpers/dice-roller.helper';
 const DICE_TYPE = 100;
 
 export class IndividualController{
-  public static Roll(challenge:number, diceRolled?:number): IMoney{
+  public static Roll(challenge:number, diceRolled?:number): Promise<IMoney>{
 
-    const diceRoll = diceRolled || diceRoller.RollDie100()[0];
-    let result :IMoney = {};
+    const resolve = ()=>{
+      const diceRoll = diceRolled || diceRoller.RollDie100()[0];
+      let result :IMoney = {};
+  
+      INDIVDUAL_TREASURE.map((individual:IIndividual)=>{
+        if(betweenHelper.IsBetween(challenge, individual.challenge.less, individual.challenge.high)){
+          if(betweenHelper.IsBetween(diceRoll, individual.diceResult.less, individual.diceResult.high)){
+            result = IndividualController.GetMoney(individual.money);
+          }
+        };
+      });
+  
+      return result;
+    };
 
-    INDIVDUAL_TREASURE.map((individual:IIndividual)=>{
-      if(betweenHelper.IsBetween(challenge, individual.challenge.less, individual.challenge.high)){
-        if(betweenHelper.IsBetween(diceRoll, individual.diceResult.less, individual.diceResult.high)){
-          result = IndividualController.GetMoney(individual.money);
-        }
-      };
-    });
-
-    return result;
+    return new Promise<IMoney>(resolve);
 
   }
 
