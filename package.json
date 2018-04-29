@@ -21,12 +21,12 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/RaymsDev/event-finder.git"
+    "url": "git+https://github.com/RaymsDev/treasure.git"
   },
   "author": "rayms.dev@gmail.com",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/RaymsDev/event-finder/issues"
+    "url": "https://github.com/RaymsDev/treasure/issues"
   },
-  "homepage": "https://github.com/RaymsDev/event-finder#readme"
+  "homepage": "https://github.com/RaymsDev/treasure#readme"
 }
